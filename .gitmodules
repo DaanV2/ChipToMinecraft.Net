@@ -1,0 +1,3 @@
+[submodule "leveldb-mcpe.Net"]
+	path = leveldb-mcpe.Net
+	url = https://github.com/DaanV2/leveldb-mcpe.Net.git
