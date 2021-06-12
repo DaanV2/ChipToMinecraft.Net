@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChipToMinecraft.Net", "ChipToMinecraft.Net\ChipToMinecraft.Net.csproj", "{173F2AA3-4DD8-4EB0-8590-404225E63C25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChipToMinecraft.Net", "ChipToMinecraft.Net\ChipToMinecraft.Net.csproj", "{173F2AA3-4DD8-4EB0-8590-404225E63C25}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LevelDB-MCPE.Net", "leveldb-mcpe.Net\LevelDB-MCPE.Net\LevelDB-MCPE.Net.csproj", "{E3C1E571-F71B-4E1D-9A10-E95AAC909B18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{951E3348-E1B7-4530-AAD0-1027E0E558D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{87A632D3-D13E-46BD-B08B-B40BA8442C5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +23,16 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|x64.Build.0 = Debug|Any CPU
-		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|x86.Build.0 = Debug|Any CPU
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|x64.ActiveCfg = Debug|x64
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|x64.Build.0 = Debug|x64
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|x86.ActiveCfg = Debug|x86
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Debug|x86.Build.0 = Debug|x86
 		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|Any CPU.Build.0 = Release|Any CPU
-		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|x64.ActiveCfg = Release|Any CPU
-		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|x64.Build.0 = Release|Any CPU
-		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|x86.ActiveCfg = Release|Any CPU
-		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|x86.Build.0 = Release|Any CPU
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|x64.ActiveCfg = Release|x64
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|x64.Build.0 = Release|x64
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|x86.ActiveCfg = Release|x86
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25}.Release|x86.Build.0 = Release|x86
 		{E3C1E571-F71B-4E1D-9A10-E95AAC909B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3C1E571-F71B-4E1D-9A10-E95AAC909B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3C1E571-F71B-4E1D-9A10-E95AAC909B18}.Debug|x64.ActiveCfg = Debug|x64
@@ -44,6 +48,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{173F2AA3-4DD8-4EB0-8590-404225E63C25} = {951E3348-E1B7-4530-AAD0-1027E0E558D5}
+		{E3C1E571-F71B-4E1D-9A10-E95AAC909B18} = {87A632D3-D13E-46BD-B08B-B40BA8442C5C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83DD0260-1CF4-4058-B389-969BC8BBEBED}
