@@ -1,0 +1,7 @@
+{
+	"$schema": "../schema/project.json",
+	"world": "",
+	"layers": [
+		{ "file": "", "block": {"id": "minecraft:copper", "states": []}, "scale": 1, "start": [0, 0, 0], "thickness": 1 }
+	]
+}
