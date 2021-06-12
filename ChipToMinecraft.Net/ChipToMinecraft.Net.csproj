@@ -2,7 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Minecraft</RootNamespace>
+    <RootNamespace>Chip</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\leveldb-mcpe.Net\LevelDB-MCPE.Net\LevelDB-MCPE.Net.csproj" />
+  </ItemGroup>
 
 </Project>
