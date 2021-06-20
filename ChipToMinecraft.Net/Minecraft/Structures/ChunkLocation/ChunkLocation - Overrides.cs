@@ -1,14 +1,14 @@
 ﻿using System;
 
 namespace Chip.Minecraft {
-    public partial struct Location : IEquatable<Location> {
+    public partial struct ChunkLocation : IEquatable<ChunkLocation> {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
-            return obj is Location location && this.Equals(location);
+            return obj is ChunkLocation location && this.Equals(location);
         }
 
         /// <summary>
@@ -16,7 +16,7 @@ namespace Chip.Minecraft {
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-        public Boolean Equals(Location other) {
+        public Boolean Equals(ChunkLocation other) {
             if (this.X == other.X && this.Y == other.Y && this.Z == other.Z) {
                 return true;
             }
@@ -35,18 +35,10 @@ namespace Chip.Minecraft {
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
-        public override String ToString() {
-            return $"{this.X}, {this.X}, {this.X}";
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static Boolean operator ==(Location left, Location right) {
+        public static Boolean operator ==(ChunkLocation left, ChunkLocation right) {
             return left.Equals(right);
         }
 
@@ -56,7 +48,7 @@ namespace Chip.Minecraft {
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static Boolean operator !=(Location left, Location right) {
+        public static Boolean operator !=(ChunkLocation left, ChunkLocation right) {
             return !(left == right);
         }
 
@@ -64,10 +56,8 @@ namespace Chip.Minecraft {
         /// 
         /// </summary>
         /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns></returns>
-        public static Location operator +(Location A, Location B) {
-            return new Location(A.X + B.X, A.Y + B.Y, A.Z + B.Z);
+        public static explicit operator ChunkLocation(Location A) {
+            return new ChunkLocation(Chunk.ChunkCoordinate(A.X), Chunk.ChunkCoordinate(A.Y), Chunk.ChunkCoordinate(A.Z));
         }
 
         /// <summary>
@@ -76,8 +66,18 @@ namespace Chip.Minecraft {
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
-        public static Location operator -(Location A, Location B) {
-            return new Location(A.X - B.X, A.Y - B.Y, A.Z - B.Z);
+        public static ChunkLocation operator +(ChunkLocation A, ChunkLocation B) {
+            return new ChunkLocation(A.X + B.X, A.Y + B.Y, A.Z + B.Z);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
+        public static ChunkLocation operator -(ChunkLocation A, ChunkLocation B) {
+            return new ChunkLocation(A.X - B.X, A.Y - B.Y, A.Z - B.Z);
         }
     }
 }
