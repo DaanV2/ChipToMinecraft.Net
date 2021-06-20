@@ -7,6 +7,17 @@ using System.Threading.Tasks;
 namespace Chip.Minecraft {
     ///DOLATER <summary>add description for interface: IWorld</summary>
     public interface IWorld {
-        pub
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Location"></param>
+        /// <returns></returns>
+        public SubChunk GetSubChunk(ChunkLocation Location);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean Close();
     }
 }
