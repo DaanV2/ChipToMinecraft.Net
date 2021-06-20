@@ -5,20 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
-    public partial struct ChunkLocation {
+    public partial struct Box {
         /// <summary>
         /// 
         /// </summary>
-        public Int32 X { get; set; }
+        public Location From;
 
         /// <summary>
         /// 
         /// </summary>
-        public Int32 Y { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Int32 Z { get; set; }
+        public Location To;
     }
 }

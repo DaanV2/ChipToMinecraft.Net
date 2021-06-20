@@ -1,14 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
-    public partial struct Location : IEquatable<Location> {
+    public partial struct Box : IEquatable<Box> {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
-            return obj is Location location && this.Equals(location);
+            return obj is Box box && this.Equals(box);
         }
 
         /// <summary>
@@ -16,10 +20,9 @@ namespace Chip.Minecraft {
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-        public Boolean Equals(Location other) {
-            if (this.X == other.X && this.Y == other.Y && this.Z == other.Z) {
+        public Boolean Equals(Box other) {
+            if (this.From.Equals(other.From) && this.To.Equals(other.To))
                 return true;
-            }
 
             return false;
         }
@@ -29,7 +32,7 @@ namespace Chip.Minecraft {
         /// </summary>
         /// <returns></returns>
         public override Int32 GetHashCode() {
-            return HashCode.Combine(this.X, this.Y, this.Z);
+            return HashCode.Combine(this.From, this.To);
         }
 
         /// <summary>
@@ -38,7 +41,7 @@ namespace Chip.Minecraft {
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static Boolean operator ==(Location left, Location right) {
+        public static Boolean operator ==(Box left, Box right) {
             return left.Equals(right);
         }
 
@@ -48,28 +51,8 @@ namespace Chip.Minecraft {
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static Boolean operator !=(Location left, Location right) {
+        public static Boolean operator !=(Box left, Box right) {
             return !(left == right);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns></returns>
-        public static Location operator +(Location A, Location B) {
-            return new Location(A.X + B.X, A.Y + B.Y, A.Z + B.Z);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns></returns>
-        public static Location operator -(Location A, Location B) {
-            return new Location(A.X - B.X, A.Y - B.Y, A.Z - B.Z);
         }
 
         /// <summary>
@@ -77,7 +60,7 @@ namespace Chip.Minecraft {
         /// </summary>
         /// <returns></returns>
         public override String ToString() {
-            return $"{this.X} {this.Y} {this.Z}";
+            return $"{this.From.X} {this.From.Y} {this.From.Z} {this.To.X} {this.To.Y} {this.To.Z}";
         }
     }
 }

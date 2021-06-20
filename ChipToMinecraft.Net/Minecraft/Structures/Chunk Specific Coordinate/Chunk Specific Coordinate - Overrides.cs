@@ -52,5 +52,13 @@ namespace Chip.Minecraft {
         public static Boolean operator !=(ChunkSpecificCoordinate left, ChunkSpecificCoordinate right) {
             return !(left == right);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override String ToString() {
+            return $"{this.Chunk}:{this.RelCoordinate}";
+        }
     }
 }

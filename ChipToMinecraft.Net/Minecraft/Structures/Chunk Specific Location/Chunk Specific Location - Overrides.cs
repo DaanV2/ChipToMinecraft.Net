@@ -88,5 +88,13 @@ namespace Chip.Minecraft {
         public static explicit operator Location(ChunkSpecificLocation A) {
             return new Location(A.X.GetWorldCoordinate(), A.Y.GetWorldCoordinate(), A.Z.GetWorldCoordinate());
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override String ToString() {
+            return $"{this.X} {this.Y} {this.Z}";
+        }
     }
 }

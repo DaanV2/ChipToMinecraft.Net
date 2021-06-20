@@ -5,16 +5,16 @@ namespace Chip.Minecraft {
         /// <summary>
         /// 
         /// </summary>
-        public Int32 X { get; set; }
+        public Int32 X;
 
         /// <summary>
         /// 
         /// </summary>
-        public Int32 Y { get; set; }
+        public Int32 Y;
 
         /// <summary>
         /// 
         /// </summary>
-        public Int32 Z { get; set; }
+        public Int32 Z;
     }
 }

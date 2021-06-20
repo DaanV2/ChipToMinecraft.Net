@@ -79,5 +79,13 @@ namespace Chip.Minecraft {
         public static ChunkLocation operator -(ChunkLocation A, ChunkLocation B) {
             return new ChunkLocation(A.X - B.X, A.Y - B.Y, A.Z - B.Z);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override String ToString() {
+            return $"{this.X} {this.Y} {this.Z}";
+        }
     }
 }
