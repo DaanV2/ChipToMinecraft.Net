@@ -1,5 +1,7 @@
-﻿namespace Chip.Minecraft {
-    public partial struct Box {
+﻿using System;
+
+namespace Chip.Minecraft {
+    public readonly partial struct Box {
         /// <summary>
         /// 
         /// </summary>
@@ -7,39 +9,41 @@
         /// <param name="B"></param>
         /// <returns></returns>
         public static Box Create(Location A, Location B) {
-            var Area = new Box();
+            Int32 xFrom, yFrom, zFrom;
+            Int32 xTo, yTo, zTo;
+
 
             //X
             if (A.X < B.X) {
-                Area.From.X = A.X;
-                Area.To.X = B.X;
+                xFrom = A.X;
+                xTo = B.X;
             }
             else {
-                Area.From.X = B.X;
-                Area.To.X = A.X;
+                xFrom = B.X;
+                xTo = A.X;
             }
 
             //Y
             if (A.Y < B.Y) {
-                Area.From.Y = A.Y;
-                Area.To.Y = B.Y;
+                yFrom = A.Y;
+                yTo = B.Y;
             }
             else {
-                Area.From.Y = B.Y;
-                Area.To.Y = A.Y;
+                yFrom = B.Y;
+                yTo = A.Y;
             }
 
             //Z
             if (A.Z < B.Z) {
-                Area.From.Z = A.Z;
-                Area.To.Z = B.Z;
+                zFrom = A.Z;
+                zTo = B.Z;
             }
             else {
-                Area.From.Z = B.Z;
-                Area.To.Z = A.Z;
+                zFrom = B.Z;
+                zTo = A.Z;
             }
 
-            return Area;
+            return new Box(xFrom, yFrom, zFrom, xTo, yTo, zTo);
         }
     }
 }

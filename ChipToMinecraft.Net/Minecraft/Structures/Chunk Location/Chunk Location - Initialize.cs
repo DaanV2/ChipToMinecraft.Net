@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
     ///DOLATER <summary>add description for struct: ChunkLocation</summary>
-    public partial struct ChunkLocation {
+    public readonly partial struct ChunkLocation {
         /// <summary>Creates a new instance of <see cref="ChunkLocation"/></summary>
         /// <param name="x"></param>
         /// <param name="y"></param>

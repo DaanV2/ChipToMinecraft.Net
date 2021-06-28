@@ -37,5 +37,20 @@ namespace Chip.Minecraft {
         public static Int32 RelativeChunkCoordinate(Int32 WorldCoordinate) {
             return WorldCoordinate & 0b0000_1111;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="WorldCoordinate"></param>
+        /// <returns></returns>
+        public static Boolean CoordinateIsStartOfChunk(Int32 WorldCoordinate) {
+            const Int32 Mask = ~0b0000_1111;
+            Int32 Pattern = WorldCoordinate & Mask;
+
+            if (Pattern == WorldCoordinate)
+                return true;
+
+            return false;
+        }
     }
 }

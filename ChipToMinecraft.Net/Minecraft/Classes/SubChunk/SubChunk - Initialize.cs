@@ -11,6 +11,8 @@ namespace Chip.Minecraft {
         /// <summary>Creates a new instance of <see cref="SubChunk"/></summary>
         public SubChunk() {
             this.Location = new ChunkLocation();
+            this.Pallete = null;
+            this.Words = null;
         }
     }
 }

@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
-    public partial class SubChunk {
+    public readonly partial struct ChunkBox {
         /// <summary>
         /// 
         /// </summary>
-        public ChunkLocation Location { get; set; }
+        public readonly ChunkLocation From;
 
         /// <summary>
         /// 
         /// </summary>
-        public UInt32[] Words { get; set; }
+        public readonly ChunkLocation To;
     }
 }

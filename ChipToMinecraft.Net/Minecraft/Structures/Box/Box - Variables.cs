@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
-    public partial struct Box {
+    public readonly partial struct Box {
         /// <summary>
         /// 
         /// </summary>
-        public Location From;
+        public readonly Location From;
 
         /// <summary>
         /// 
         /// </summary>
-        public Location To;
+        public readonly Location To;
     }
 }

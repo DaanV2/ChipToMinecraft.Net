@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
-    public partial struct ChunkSpecificCoordinate {
+    public readonly partial struct ChunkSpecificCoordinate {
         /// <summary>The chunk coordiante</summary>
-        public Int32 Chunk;
+        public readonly Int32 Chunk;
 
         /// <summary>The relative coordinate in the chunk</summary>
-        public Int32 RelCoordinate;
+        public readonly Int32 RelCoordinate;
 
     }
 }

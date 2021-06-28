@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
-    public partial struct Box : IEquatable<Box> {
+    public readonly partial struct Box : IEquatable<Box> {
         /// <summary>
         /// 
         /// </summary>

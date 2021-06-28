@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace Chip.Minecraft.Serialization {
     public partial class LocationConverter : JsonConverter<Location> {
@@ -16,12 +12,13 @@ namespace Chip.Minecraft.Serialization {
         /// <param name="options"></param>
         /// <returns></returns>
         public override Location Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) {
-            Location Out = new Location();
+            Location Out;
 
-            if (reader.TokenType ==  JsonTokenType.StartArray) {
-                Out.X = reader.GetInt32();
-                Out.Y = reader.GetInt32();
-                Out.Z = reader.GetInt32();
+            if (reader.TokenType == JsonTokenType.StartArray) {
+                Out = new Location(reader.GetInt32(), reader.GetInt32(), reader.GetInt32());
+            }
+            else {
+                Out = new Location();
             }
 
             return Out;

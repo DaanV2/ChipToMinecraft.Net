@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Chip.Minecraft {
-    public partial struct ChunkSpecificLocation : IEquatable<ChunkSpecificLocation> {
+    public readonly partial struct ChunkSpecificLocation : IEquatable<ChunkSpecificLocation> {
         /// <summary>
         /// 
         /// </summary>

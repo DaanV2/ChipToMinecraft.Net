@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Chip.Minecraft {
-    public partial struct ChunkSpecificCoordinate {
+    public readonly partial struct ChunkSpecificCoordinate {
         /// <summary>
         /// 
         /// </summary>

@@ -38,5 +38,19 @@ namespace UnitTesting.Minecraft {
             Assert.IsTrue(Chip.Minecraft.Chunk.RelativeChunkCoordinate(1) == 1);
             Assert.IsTrue(Chip.Minecraft.Chunk.RelativeChunkCoordinate(16) == 0);
         }
+
+        [TestMethod]
+        public void StartOfChunk() {
+            for (Int32 I = -2; I < 3; I++) {
+                Int32 Start = Chip.Minecraft.Chunk.WorldCoordinate(I);
+
+                Assert.IsTrue(Chip.Minecraft.Chunk.CoordinateIsStartOfChunk(Start));
+
+                for (Int32 J = 1; J < 16; J++) {
+                    Assert.IsFalse(Chip.Minecraft.Chunk.CoordinateIsStartOfChunk(Start + J));
+                }
+            }
+
+        }
     }
 }

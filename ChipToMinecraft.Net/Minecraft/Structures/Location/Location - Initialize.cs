@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace Chip.Minecraft {
     ///DOLATER <summary>add description for struct: Location</summary>
     [JsonConverter(typeof(Serialization.LocationConverter))]
-    public partial struct Location {
+    public readonly partial struct Location {
         /// <summary>
         /// 
         /// </summary>

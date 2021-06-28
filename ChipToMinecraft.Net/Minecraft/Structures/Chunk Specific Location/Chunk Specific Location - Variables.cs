@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
-    public partial struct ChunkSpecificLocation {
+    public readonly partial struct ChunkSpecificLocation {
         /// <summary>
         /// 
         /// </summary>
-        public ChunkSpecificCoordinate X;
+        public readonly ChunkSpecificCoordinate X;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChunkSpecificCoordinate Y;
+        public readonly ChunkSpecificCoordinate Y;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChunkSpecificCoordinate Z;
+        public readonly ChunkSpecificCoordinate Z;
     }
 }

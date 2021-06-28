@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
-    public partial struct ChunkSpecificCoordinate : IEquatable<ChunkSpecificCoordinate> {
+    public readonly partial struct ChunkSpecificCoordinate : IEquatable<ChunkSpecificCoordinate> {
         /// <summary>
         /// 
         /// </summary>

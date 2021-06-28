@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Chip.Minecraft {
-    public partial struct ChunkLocation : IEquatable<ChunkLocation> {
+    public readonly partial struct ChunkLocation : IEquatable<ChunkLocation> {
         /// <summary>
         /// 
         /// </summary>
@@ -58,6 +58,14 @@ namespace Chip.Minecraft {
         /// <param name="A"></param>
         public static explicit operator ChunkLocation(Location A) {
             return new ChunkLocation(Chunk.ChunkCoordinate(A.X), Chunk.ChunkCoordinate(A.Y), Chunk.ChunkCoordinate(A.Z));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="A"></param>
+        public static explicit operator Location(ChunkLocation A) {
+            return new Location(Chunk.WorldCoordinate(A.X), Chunk.WorldCoordinate(A.Y), Chunk.WorldCoordinate(A.Z));
         }
 
         /// <summary>
