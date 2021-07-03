@@ -24,6 +24,10 @@ namespace Chip.Minecraft {
                 for (Int32 Y = From.Y; Y <= To.Y; Y++) {
                     for (Int32 Z = From.Z; Z <= To.Z; Z++) {
                         SubChunk SubChunk = World.GetSubChunk(new ChunkLocation(X, Y, Z));
+
+                        if (SubChunk.Words == null || SubChunk.Pallete == null)
+                            continue;    
+
                         ChunkUpdate Update = call(SubChunk);
 
                         if (Update == ChunkUpdate.Updated) { World.SetSubChunk(SubChunk); }
