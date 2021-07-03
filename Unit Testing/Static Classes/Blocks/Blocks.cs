@@ -8,10 +8,10 @@ namespace UnitTesting {
 
         static Blocks() {
             AirBlock = new NBTTagCompound {
-                new NBTTagString("id", "minecraft:air")
+                new NBTTagString("name", "minecraft:air")
             };
             Copper = new NBTTagCompound {
-                new NBTTagString("id", "minecraft:copper")
+                new NBTTagString("name", "minecraft:copper")
             };
         }
     }
