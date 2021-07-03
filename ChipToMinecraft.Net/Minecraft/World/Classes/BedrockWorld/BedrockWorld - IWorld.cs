@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Chip.Minecraft.LevelDB;
 
 namespace Chip.Minecraft.World {
     public partial class BedrockWorld : IWorld {
@@ -10,8 +11,10 @@ namespace Chip.Minecraft.World {
         /// 
         /// </summary>
         /// <returns></returns>
-        public Boolean Close() {
-            throw new NotImplementedException();
+        public void Close() {
+            this.Db.Close();
+            this.Db = null;
+            GC.Collect();
         }
 
         /// <summary>
@@ -20,7 +23,7 @@ namespace Chip.Minecraft.World {
         /// <param name="Location"></param>
         /// <returns></returns>
         public SubChunk GetSubChunk(ChunkLocation Location) {
-            throw new NotImplementedException();
+            return SubChunkFormat.Get(this, Location);
         }
 
         /// <summary>
@@ -28,7 +31,7 @@ namespace Chip.Minecraft.World {
         /// </summary>
         /// <param name="Data"></param>
         public void SetSubChunk(SubChunk Data) {
-            throw new NotImplementedException();
+            return SubChunkFormat.Set(this, Data);
         }
     }
 }

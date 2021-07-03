@@ -1,17 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
+using LevelDB;
 
 namespace Chip.Minecraft.World {
     /// <summary>Non current access to the bedrock world</summary>
     /// <remarks>Not threadsafe</remarks>
     public partial class BedrockWorld {
         /// <summary>Creates a new instance of <see cref="BedrockWorld"/></summary>
-        public BedrockWorld(string Folder) {
+        internal BedrockWorld() {
+            this.Folder = String.Empty;
+        }
+
+        /// <summary>Creates a new instance of <see cref="BedrockWorld"/></summary>
+        /// <param name="Folder">The world storage location</param>
+        internal BedrockWorld(String Folder) {
+            this.Folder = Folder;
+            var O = new Options {
+                CompressionLevel = global::LevelDB.CompressionLevel.ZlibRawCompression
+            };
+
+            this.Db = new DB(Folder + "db", O);
+        }
+
+        /// <summary>Disposes of this bedrock world</summary>
+        ~BedrockWorld() {
+            this.Close();
         }
     }
 }
