@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Minecraft\LevelDB\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="DaanV2.Essentials.Net" Version="1.1.10" />
     <PackageReference Include="DaanV2.NBT.Net" Version="1.3.0" />
   </ItemGroup>
