@@ -20,6 +20,6 @@ namespace Chip.Minecraft {
         /// 
         /// </summary>
         /// <returns></returns>
-        public Boolean Close();
+        public void Close();
     }
 }
