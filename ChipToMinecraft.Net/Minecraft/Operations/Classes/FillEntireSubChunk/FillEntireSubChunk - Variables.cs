@@ -7,9 +7,7 @@ using DaanV2.NBT;
 
 namespace Chip.Minecraft.Operations {
     public partial class FillEntireSubChunk {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly NBTTagCompound Block;
     }
 }

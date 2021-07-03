@@ -9,27 +9,21 @@ using DaanV2.NBT.Serialization;
 namespace Chip.Minecraft.LevelDB {
     ///DOLATER <summary>add description for class: SubChunkFormat</summary>
     public static partial class SubChunkFormat {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="O"></param>
         /// <param name="Writer"></param>
         public static void Serialize(BlockStorage O, MemoryStream Writer) {
             InternalSerialize(O, Writer);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="O"></param>
         /// <param name="Writer"></param>
         public static void Serialize(BlockStorage O, Stream Writer) {
             InternalSerialize(O, Writer);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="O"></param>
         /// <param name="Writer"></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

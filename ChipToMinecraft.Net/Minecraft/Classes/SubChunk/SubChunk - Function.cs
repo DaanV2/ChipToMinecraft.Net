@@ -5,9 +5,7 @@ using DaanV2.NBT;
 
 namespace Chip.Minecraft {
     public partial class SubChunk {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="X"></param>
         /// <param name="Y"></param>
         /// <param name="Z"></param>
@@ -16,9 +14,7 @@ namespace Chip.Minecraft {
             return this.Words[GetIndex(X, Y, Z)];
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="X"></param>
         /// <param name="Y"></param>
         /// <param name="Z"></param>
@@ -28,9 +24,7 @@ namespace Chip.Minecraft {
             this.Words[GetIndex(X, Y, Z)] = Word;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="X"></param>
         /// <param name="Y"></param>
         /// <param name="Z"></param>
@@ -41,9 +35,7 @@ namespace Chip.Minecraft {
         }
 
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Location"></param>
         /// <param name="block"></param>
         /// <returns></returns>

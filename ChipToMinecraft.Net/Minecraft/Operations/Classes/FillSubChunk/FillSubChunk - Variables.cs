@@ -7,39 +7,25 @@ using DaanV2.NBT;
 
 namespace Chip.Minecraft.Operations {
     public partial class FillSubChunk {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public Int32 StartX { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public Int32 StartY { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public Int32 StartZ { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public Int32 EndX { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public Int32 EndY { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public Int32 EndZ { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly NBTTagCompound Block;
     }
 }

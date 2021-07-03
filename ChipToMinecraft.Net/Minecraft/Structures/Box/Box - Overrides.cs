@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
     public readonly partial struct Box : IEquatable<Box> {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
             return obj is Box box && this.Equals(box);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="other"></param>
         /// <returns></returns>
         public Boolean Equals(Box other) {
@@ -27,17 +23,13 @@ namespace Chip.Minecraft {
             return false;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public override Int32 GetHashCode() {
             return HashCode.Combine(this.From, this.To);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -45,9 +37,7 @@ namespace Chip.Minecraft {
             return left.Equals(right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -55,9 +45,7 @@ namespace Chip.Minecraft {
             return !(left == right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public override String ToString() {
             return $"{this.From.X} {this.From.Y} {this.From.Z} {this.To.X} {this.To.Y} {this.To.Z}";

@@ -4,9 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Chip.Minecraft.Serialization {
     public partial class LocationConverter : JsonConverter<Location> {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="reader"></param>
         /// <param name="typeToConvert"></param>
         /// <param name="options"></param>
@@ -24,9 +22,7 @@ namespace Chip.Minecraft.Serialization {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="writer"></param>
         /// <param name="value"></param>
         /// <param name="options"></param>

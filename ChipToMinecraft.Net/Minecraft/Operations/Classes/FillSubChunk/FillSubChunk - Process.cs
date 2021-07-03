@@ -2,9 +2,7 @@
 
 namespace Chip.Minecraft.Operations {
     public partial class FillSubChunk {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="ToFill"></param>
         /// <returns></returns>
         public ChunkUpdate Fill(SubChunk ToFill, Box Area) {

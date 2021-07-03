@@ -9,9 +9,7 @@ namespace Chip.Minecraft.Operations {
             this.Block = Block;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Area">The total area to filled</param>
         /// <param name="Anchor">The chunk coordinates to determine the pattern from</param>
         public FillSubChunk(Box Area, Location Anchor, NBTTagCompound Block) {

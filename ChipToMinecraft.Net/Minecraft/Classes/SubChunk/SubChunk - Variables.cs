@@ -7,19 +7,13 @@ using DaanV2.NBT;
 
 namespace Chip.Minecraft {
     public partial class SubChunk {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public ChunkLocation Location;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public UInt32[] Words;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public List<NBTTagCompound> Pallete;
     }
 }

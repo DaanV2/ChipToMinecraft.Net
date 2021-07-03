@@ -2,9 +2,7 @@
 
 namespace Chip.Minecraft.Operations {
     public partial class FillEntireSubChunk {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="World"></param>
         /// <param name="Area"></param>
@@ -17,9 +15,7 @@ namespace Chip.Minecraft.Operations {
             World.ForEach(Op.Fill, Area);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Area"></param>
         /// <returns></returns>
         public static Box? GetFullSubChunk(Box Area) {

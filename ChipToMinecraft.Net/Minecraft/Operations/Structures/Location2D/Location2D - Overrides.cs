@@ -2,18 +2,14 @@
 
 namespace Chip.Minecraft.Operations {
     public readonly partial struct Location2D : IEquatable<Location2D> {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
             return obj is Location2D d && this.Equals(d);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="other"></param>
         /// <returns></returns>
         public Boolean Equals(Location2D other) {
@@ -23,17 +19,13 @@ namespace Chip.Minecraft.Operations {
             return false;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public override Int32 GetHashCode() {
             return HashCode.Combine(this.X, this.Z);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -41,9 +33,7 @@ namespace Chip.Minecraft.Operations {
             return left.Equals(right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -51,9 +41,7 @@ namespace Chip.Minecraft.Operations {
             return !(left == right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="A"></param>
         public static explicit operator Location2D(Location A) {
             return new Location2D(A.X, A.Z);

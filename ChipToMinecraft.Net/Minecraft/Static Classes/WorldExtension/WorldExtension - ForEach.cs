@@ -6,9 +6,7 @@ namespace Chip.Minecraft {
     /// 
     /// </summary>
     public static partial class WorldExtension {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="World"></param>
         /// <param name="call"></param>
@@ -37,9 +35,7 @@ namespace Chip.Minecraft {
 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam+>
         /// <param name="World"></param>
         /// <param name="call"></param>
@@ -64,9 +60,7 @@ namespace Chip.Minecraft {
 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="World"></param>
         /// <param name="call"></param>
@@ -91,9 +85,7 @@ namespace Chip.Minecraft {
 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam+>
         /// <param name="World"></param>
         /// <param name="call"></param>

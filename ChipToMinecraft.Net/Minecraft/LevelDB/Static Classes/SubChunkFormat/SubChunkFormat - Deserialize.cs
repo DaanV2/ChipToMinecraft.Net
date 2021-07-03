@@ -8,18 +8,14 @@ using DaanV2.NBT.Serialization;
 
 namespace Chip.Minecraft.LevelDB {
     public static partial class SubChunkFormat {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static BlockStorage Deserialize(MemoryStream stream) {
             return InternalDeserialize(stream);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static BlockStorage Deserialize(Stream stream) {

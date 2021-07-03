@@ -4,17 +4,13 @@ using System.Collections.Generic;
 
 namespace Chip.Minecraft {
     public partial struct Range : IEnumerable<Int32> {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator() {
             return new RangeEnumerator(this);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public class RangeEnumerator : IEnumerator<Int32> {
             /// <summary>
             /// 

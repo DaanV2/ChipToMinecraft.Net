@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Chip.Minecraft.Operations {
     public readonly partial struct Location2D {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly Int32 X;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly Int32 Z;
     }
 }

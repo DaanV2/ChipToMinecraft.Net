@@ -31,9 +31,7 @@ namespace Chip.Minecraft {
             return (Box.To.Y - Box.From.Y) + 1;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="U"></typeparam>
         /// <param name="Box"></param>
@@ -70,9 +68,7 @@ namespace Chip.Minecraft {
             return (Box.To.Y - Box.From.Y) + 1;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="U"></typeparam>
         /// <param name="Box"></param>

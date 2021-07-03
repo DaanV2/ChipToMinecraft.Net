@@ -2,9 +2,7 @@
 
 namespace Chip.Minecraft {
     public partial struct Range {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Start"></param>
         /// <param name="Length"></param>
         /// <returns></returns>

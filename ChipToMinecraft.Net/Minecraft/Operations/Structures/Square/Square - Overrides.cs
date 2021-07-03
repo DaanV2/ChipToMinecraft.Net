@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace Chip.Minecraft.Operations {
     public readonly partial struct Square : IEquatable<Square> {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
             return obj is Square square && this.Equals(square);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="other"></param>
         /// <returns></returns>
         public Boolean Equals(Square other) {
@@ -28,17 +24,13 @@ namespace Chip.Minecraft.Operations {
             return false;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public override Int32 GetHashCode() {
             return HashCode.Combine(this.From, this.To);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -46,9 +38,7 @@ namespace Chip.Minecraft.Operations {
             return left.Equals(right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>

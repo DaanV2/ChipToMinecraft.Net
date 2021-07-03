@@ -5,9 +5,7 @@ namespace Chip.Minecraft {
     ///DOLATER <summary>add description for struct: Location</summary>
     [JsonConverter(typeof(Serialization.LocationConverter))]
     public readonly partial struct Location {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="z"></param>

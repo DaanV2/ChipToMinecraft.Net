@@ -4,9 +4,7 @@ using DaanV2.NBT;
 
 namespace Chip.Minecraft.LevelDB {
     public partial class BlockStorage {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="From"></param>
         /// <param name="To"></param>
         public static void ConvertTo(BlockStorage From, SubChunk To) {
@@ -14,9 +12,7 @@ namespace Chip.Minecraft.LevelDB {
             To.Words = Decompress(From);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="From"></param>
         /// <param name="To"></param>
         public static void ConvertFrom(SubChunk From, BlockStorage To) {
@@ -81,9 +77,7 @@ namespace Chip.Minecraft.LevelDB {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Process"></param>
         /// <returns></returns>
         public static UInt32[] Decompress(BlockStorage Process) {
@@ -108,9 +102,7 @@ namespace Chip.Minecraft.LevelDB {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="BlockSize"></param>
         /// <returns></returns>
         public static UInt32 GetMask(Int32 BlockSize) {

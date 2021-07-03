@@ -4,9 +4,7 @@ namespace Chip.Minecraft.Operations {
     public partial class LayerBuilder<T>
         where T : IWorld {
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Area"></param>
         /// <param name="Block"></param>
         public void Fill(Square Area, NBTTagCompound Block) {

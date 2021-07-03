@@ -2,9 +2,7 @@
 
 namespace Chip.Minecraft {
     public readonly partial struct Location {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="X"></param>
         /// <param name="Y"></param>
         /// <param name="Z"></param>

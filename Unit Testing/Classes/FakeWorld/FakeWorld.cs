@@ -5,14 +5,10 @@ using DaanV2.NBT;
 
 namespace UnitTesting {
     public partial class FakeWorld : IWorld {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public Boolean IsClosed { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public ConcurrentDictionary<ChunkLocation, FakeSubChunk> Cache { get; set; }
 
         public Int32 SubChunkReads;
@@ -28,18 +24,14 @@ namespace UnitTesting {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public Boolean Close() {
             this.IsClosed = true;
             return this.IsClosed;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Location"></param>
         /// <returns></returns>
         public SubChunk GetSubChunk(ChunkLocation Location) {
@@ -59,9 +51,7 @@ namespace UnitTesting {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Data"></param>
         public void SetSubChunk(SubChunk Data) {
             FakeSubChunk Item;

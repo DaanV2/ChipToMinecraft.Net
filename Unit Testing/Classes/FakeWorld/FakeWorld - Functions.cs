@@ -5,9 +5,7 @@ using DaanV2.NBT;
 
 namespace UnitTesting {
     public partial class FakeWorld {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="Block"></param>
         /// <returns></returns>
         public Int32 CountBlock(NBTTagCompound Block) {

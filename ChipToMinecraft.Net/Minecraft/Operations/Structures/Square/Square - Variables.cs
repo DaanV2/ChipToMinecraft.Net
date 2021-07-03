@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Chip.Minecraft.Operations {
     public readonly partial struct Square {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly Location2D From;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly Location2D To;
     }
 }

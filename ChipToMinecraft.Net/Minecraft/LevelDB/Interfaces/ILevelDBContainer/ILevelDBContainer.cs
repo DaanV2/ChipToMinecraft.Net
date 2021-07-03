@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace Chip.Minecraft.LevelDB {
     ///DOLATER <summary>add description for interface: ILevelDBContainer</summary>
     public interface ILevelDBContainer {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public global::LevelDB.DB Db { get; }
     }
 }

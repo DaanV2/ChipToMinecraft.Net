@@ -3,9 +3,7 @@ using DaanV2.NBT;
 
 namespace Chip.Minecraft.Operations {
     public partial class FillSubChunk {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="World"></param>
         /// <param name="Area"></param>

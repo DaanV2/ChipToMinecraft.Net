@@ -7,14 +7,10 @@ using Chip.Minecraft.LevelDB;
 
 namespace Chip.Minecraft.World {
     public partial class BedrockWorld : ILevelDBContainer {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public global::LevelDB.DB Db { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public string Folder { get; private set; }
     }
 }

@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
     public readonly partial struct Box {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly Location From;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly Location To;
     }
 }

@@ -4,9 +4,7 @@ using DaanV2.NBT;
 
 namespace Chip.Minecraft.Operations {
     public partial class FillEntireSubChunk {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="ToFill"></param>
         /// <returns></returns>
         public ChunkUpdate Fill(SubChunk ToFill) {

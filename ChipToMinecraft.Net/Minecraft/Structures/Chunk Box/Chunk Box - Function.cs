@@ -2,9 +2,7 @@
 
 namespace Chip.Minecraft {
     public readonly partial struct ChunkBox {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>

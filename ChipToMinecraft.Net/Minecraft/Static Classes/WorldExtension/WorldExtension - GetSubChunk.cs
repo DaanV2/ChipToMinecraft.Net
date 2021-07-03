@@ -3,9 +3,7 @@
 namespace Chip.Minecraft {
     ///DOLATER <summary>add description for class: WorldExtension</summary>
     public static partial class WorldExtension {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="World"></param>
         /// <param name="WordLocation"></param>
@@ -16,9 +14,7 @@ namespace Chip.Minecraft {
             return World.GetSubChunk((ChunkLocation)WordLocation);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="World"></param>
         /// <param name="WordLocation"></param>

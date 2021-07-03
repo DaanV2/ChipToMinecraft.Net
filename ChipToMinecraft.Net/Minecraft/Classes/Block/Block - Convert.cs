@@ -4,9 +4,7 @@ using DaanV2.NBT.Builders;
 
 namespace Chip.Minecraft {
     public partial class Block {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public NBTTagCompound ToNBT() {
             return ToNBT(this);

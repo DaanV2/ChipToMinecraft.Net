@@ -5,9 +5,7 @@ using DaanV2.NBT;
 
 namespace Chip.Minecraft.LevelDB {
     public static partial class SubChunkFormat {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="Container"></param>
         /// <param name="X"></param>
@@ -19,9 +17,7 @@ namespace Chip.Minecraft.LevelDB {
             return Get<T>(Container, new ChunkLocation(X, Y, Z));
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="Container"></param>
         /// <param name="Chunk"></param>

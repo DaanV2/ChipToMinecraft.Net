@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
     public readonly partial struct ChunkBox {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly ChunkLocation From;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public readonly ChunkLocation To;
     }
 }

@@ -2,18 +2,14 @@
 
 namespace Chip.Minecraft {
     public readonly partial struct Location : IEquatable<Location> {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
             return obj is Location location && this.Equals(location);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="other"></param>
         /// <returns></returns>
         public Boolean Equals(Location other) {
@@ -24,17 +20,13 @@ namespace Chip.Minecraft {
             return false;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public override Int32 GetHashCode() {
             return HashCode.Combine(this.X, this.Y, this.Z);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -42,9 +34,7 @@ namespace Chip.Minecraft {
             return left.Equals(right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -52,9 +42,7 @@ namespace Chip.Minecraft {
             return !(left == right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
@@ -62,9 +50,7 @@ namespace Chip.Minecraft {
             return new Location(A.X + B.X, A.Y + B.Y, A.Z + B.Z);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
@@ -72,9 +58,7 @@ namespace Chip.Minecraft {
             return new Location(A.X - B.X, A.Y - B.Y, A.Z - B.Z);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public override String ToString() {
             return $"{this.X} {this.Y} {this.Z}";

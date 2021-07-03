@@ -2,18 +2,14 @@
 
 namespace Chip.Minecraft {
     public readonly partial struct ChunkSpecificLocation : IEquatable<ChunkSpecificLocation> {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
             return obj is ChunkSpecificLocation location && this.Equals(location);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="other"></param>
         /// <returns></returns>
         public Boolean Equals(ChunkSpecificLocation other) {
@@ -24,17 +20,13 @@ namespace Chip.Minecraft {
             return false;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public override Int32 GetHashCode() {
             return HashCode.Combine(this.X, this.Y, this.Z);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -42,9 +34,7 @@ namespace Chip.Minecraft {
             return left.Equals(right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
@@ -52,9 +42,7 @@ namespace Chip.Minecraft {
             return !(left == right);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="A"></param>
         public static implicit operator ChunkSpecificLocation(Location A) {
             return new ChunkSpecificLocation(
@@ -63,9 +51,7 @@ namespace Chip.Minecraft {
                 ChunkSpecificCoordinate.FromWorld(A.Z));
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="A"></param>
         public static implicit operator ChunkSpecificLocation(ChunkLocation A) {
             return new ChunkSpecificLocation(
@@ -74,24 +60,18 @@ namespace Chip.Minecraft {
                 new ChunkSpecificCoordinate(A.Z, 0));
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <param name="A"></param>
         public static implicit operator ChunkLocation(ChunkSpecificLocation A) {
             return new ChunkLocation(A.X.Chunk, A.Y.Chunk, A.Z.Chunk);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         public static explicit operator Location(ChunkSpecificLocation A) {
             return new Location(A.X.GetWorldCoordinate(), A.Y.GetWorldCoordinate(), A.Z.GetWorldCoordinate());
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> </summary>
         /// <returns></returns>
         public override String ToString() {
             return $"{this.X} {this.Y} {this.Z}";
