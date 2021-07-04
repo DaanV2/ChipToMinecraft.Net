@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using DaanV2.NBT;
 
 namespace Chip.Minecraft.Operations {
@@ -10,7 +11,10 @@ namespace Chip.Minecraft.Operations {
         /// <param name="block"></param>
         public static void Fill<T>(T World, Box Area, NBTTagCompound block)
             where T : IWorld {
-            //TODO
+
+            var Op = new FillSubChunk(block);
+
+            World.ForEach(Op.Fill, Area);
         }
     }
 }

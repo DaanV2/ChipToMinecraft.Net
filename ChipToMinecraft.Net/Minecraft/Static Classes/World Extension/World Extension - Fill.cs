@@ -49,17 +49,9 @@ namespace Chip.Minecraft {
         internal static void InternalFill<T>(T World, ChunkLocation From, ChunkLocation To, Box Area, NBTTagCompound block)
             where T : IWorld {
 
-            if (From.X > To.X) {
-                return;
-            }
-
-            if (From.Y > To.Y) {
-                return;
-            }
-
-            if (From.Z > To.Z) {
-                return;
-            }
+            if (From.X > To.X) {return;}
+            if (From.Y > To.Y) {return;}
+            if (From.Z > To.Z) {return;}
 
             var Op = new Operations.FillSubChunk(block);
             var NewBox = new Box((Location)From, (Location)To);

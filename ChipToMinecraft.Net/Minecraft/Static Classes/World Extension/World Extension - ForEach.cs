@@ -82,7 +82,6 @@ namespace Chip.Minecraft {
                     }
                 }
             }
-
         }
 
         /// <summary> </summary>

@@ -13,6 +13,8 @@ namespace Chip.Minecraft.LevelDB {
             where T : ILevelDBContainer {
 
             global::LevelDB.DB DB = Container.Db;
+            if (DB == null) return;
+
             var Writer = new MemoryStream(411);
 
             //Write the version
@@ -30,6 +32,8 @@ namespace Chip.Minecraft.LevelDB {
             where T : ILevelDBContainer {
 
             global::LevelDB.DB DB = Container.Db;
+            if (DB == null) return;
+
             var Writer = new MemoryStream((Data.Count * 410) + 1);
 
 
@@ -39,7 +43,6 @@ namespace Chip.Minecraft.LevelDB {
             Writer.WriteByte((Byte)Data.Count);
 
             foreach (SubChunk SC in Data) {
-
                 SubChunkFormat.Serialize(Data, Writer);
             }
 

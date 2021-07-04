@@ -1,17 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Chip.Minecraft.LevelDB;
 
-namespace Chip.Minecraft.World {
+namespace Chip.Minecraft {
     public partial class BedrockWorld : IWorld {
         /// <summary> </summary>
         /// <returns></returns>
         public void Close() {
-            this.Db.Close();
-            this.Db = null;
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine($"Closing world: {this.Folder}");
+#endif
+
+            if (this.Db != null) {
+                this.Db.Close();
+                this.Db = null;
+            }
             GC.Collect();
         }
 
@@ -25,7 +27,7 @@ namespace Chip.Minecraft.World {
         /// <summary> </summary>
         /// <param name="Data"></param>
         public void SetSubChunk(SubChunk Data) {
-            return SubChunkFormat.Set(this, Data);
+            SubChunkFormat.Set(this, Data);
         }
     }
 }

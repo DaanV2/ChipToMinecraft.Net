@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using DaanV2.NBT;
 
 namespace Chip.Minecraft.Operations {
@@ -11,6 +12,10 @@ namespace Chip.Minecraft.Operations {
             ToFill.Pallete = new List<NBTTagCompound> {
                 this.Block
             };
+
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine($"[Chunk: {ToFill.Location}]: Filling All: {this.Block.GetSubValue<String>("name")} T{Thread.CurrentThread.ManagedThreadId}");
+#endif
 
             UInt32[] Words = ToFill.Words;
             Int32 Count = Words.Length;

@@ -26,6 +26,8 @@ namespace Chip.Minecraft.LevelDB {
             where T : ILevelDBContainer {
 
             global::LevelDB.DB DB = Container.Db;
+            if (DB == null) return null;
+
             Byte Version = ChunkFormat.GetVersion(Container, Chunk.X, Chunk.Z);
 
             var Out = new SubChunk();
@@ -40,7 +42,9 @@ namespace Chip.Minecraft.LevelDB {
             Version = (Byte)stream.ReadByte();
             Int32 LayerCount = stream.ReadByte();
 
-            if (LayerCount == 0) return Out;
+            if (LayerCount == 0) {
+                return Out;
+            }
 
             if (Version == 8) {
                 BlockStorage BS = Deserialize(stream);

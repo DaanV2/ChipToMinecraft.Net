@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Chip.Minecraft.Operations {
     public partial class FillSubChunk {
@@ -21,6 +22,10 @@ namespace Chip.Minecraft.Operations {
             //If nothing is found
             Index = (UInt32)Count;
             ToFill.Pallete.Add(this.Block);
+
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine($"[Chunk: {ToFill.Location}]: Filling Partial: {this.Block.GetSubValue<String>("name")} T{Thread.CurrentThread.ManagedThreadId}");
+#endif
 
         skipset:
 
