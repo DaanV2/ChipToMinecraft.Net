@@ -6,5 +6,6 @@
 ## API Usage
 
 ```C#
-var workd = Chip.Minecraft.BedrockWorld.Open("Some folder path");
+var world = Chip.Minecraft.BedrockWorld.Open("Some folder path");
+
 ```

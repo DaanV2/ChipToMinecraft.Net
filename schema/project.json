@@ -1,101 +1,101 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"required": ["world"],
-	"additionalProperties": false, 
-	"definitions": {
-		"location": {
-			"title": "Location",
-			"description": "A location",
-			"type": "array",
-			"examples": [[0, 0, 0]],
-			"items": [
-				{ "title": "X", "type": "integer", "description": "The X coordinate of the location"},
-				{ "title": "Y", "type": "integer", "description": "The Y coordinate of the location"},
-				{ "title": "Z", "type": "integer", "description": "The Z coordinate of the location"}
-			]
-		}
-	},
-	"properties": {
-		"world": {
-			"title": "World",
-			"description": "The folder path to where the level.dat is located of the minecraft bedrock world",
-			"type": "string"
-		},
-		"layers": {
-			"type": "array",
-			"title": "Layers",
-			"description": "The specification for each layer",
-			"items": {
-				"type": "object",
-				"title": "Layer",
-				"required": ["file", "start", "thickness", "block"],
-				"properties": {
-					"file": {
-						"title": "File",
-						"description": "Filepath to the layer data",
-						"type": "string"
-					},
-					"start": {
-						"title": "Start",
-						"description": "The start location of the layer",
-						"$ref": "#/definitions/location"
-					},
-					"thickness": {
-						"title": "Thickness",
-						"description": "The amount of blocks thick this layer is",
-						"type": "integer",
-						"default": 1,
-						"minimum": 1
-					},
-					"scale": {
-						"title": "Scale",
-						"description": "The scale of the layer",
-						"type": "number",
-						"default": 1,
-						"minimum": 0
-					},
-					"block": {
-						"title": "Block",
-						"type": "object",
-						"description": "The block specification",
-						"required": ["id"],
-						"properties": {
-							"id": {
-								"title": "ID",
-								"description": "The identifier of the block",
-								"type": "string",
-								"examples": ["minecraft:copper"]
-							},
-							"states": {
-								"title": "States",
-								"type": "array",
-								"description": "The block state related",
-								"items": {
-									"title": "State",
-									"description": "The block state",
-									"required": ["name", "type", "value"],
-									"properties": {
-										"name": {
-											"title": "Name",
-											"type": "string"
-										},
-										"type": {
-											"type": "string",
-											"enum": ["int", "byte", "string"]
-										},
-										"value": {
-											"type": "integer",
-											"title": "Value"
-										}
-									}
-								}
-							}
-						}	
-					}
-				}
-			}
-		},
-		"$schema": {"type": "string"}
-	}
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": ["world"],
+  "additionalProperties": false,
+  "definitions": {
+    "location": {
+      "title": "Location",
+      "description": "A location",
+      "type": "array",
+      "examples": [[0, 0, 0]],
+      "items": [
+        { "title": "X", "type": "integer", "description": "The X coordinate of the location" },
+        { "title": "Y", "type": "integer", "description": "The Y coordinate of the location" },
+        { "title": "Z", "type": "integer", "description": "The Z coordinate of the location" }
+      ]
+    }
+  },
+  "properties": {
+    "world": {
+      "title": "World",
+      "description": "The folder path to where the level.dat is located of the minecraft bedrock world",
+      "type": "string"
+    },
+    "layers": {
+      "type": "array",
+      "title": "Layers",
+      "description": "The specification for each layer",
+      "items": {
+        "type": "object",
+        "title": "Layer",
+        "required": ["file", "start", "thickness", "block"],
+        "properties": {
+          "file": {
+            "title": "File",
+            "description": "Filepath to the layer data",
+            "type": "string"
+          },
+          "start": {
+            "title": "Start",
+            "description": "The start location of the layer",
+            "$ref": "#/definitions/location"
+          },
+          "thickness": {
+            "title": "Thickness",
+            "description": "The amount of blocks thick this layer is",
+            "type": "integer",
+            "default": 1,
+            "minimum": 1
+          },
+          "scale": {
+            "title": "Scale",
+            "description": "The scale of the layer",
+            "type": "number",
+            "default": 1,
+            "minimum": 0
+          },
+          "block": {
+            "title": "Block",
+            "type": "object",
+            "description": "The block specification",
+            "required": ["id"],
+            "properties": {
+              "id": {
+                "title": "ID",
+                "description": "The identifier of the block",
+                "type": "string",
+                "examples": ["minecraft:copper"]
+              },
+              "states": {
+                "title": "States",
+                "type": "array",
+                "description": "The block state related",
+                "items": {
+                  "title": "State",
+                  "description": "The block state",
+                  "required": ["name", "type", "value"],
+                  "properties": {
+                    "name": {
+                      "title": "Name",
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": ["int", "byte", "string"]
+                    },
+                    "value": {
+                      "type": "integer",
+                      "title": "Value"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "$schema": { "type": "string" }
+  }
 }

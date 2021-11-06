@@ -5,14 +5,17 @@ using DaanV2.NBT;
 
 namespace UnitTesting {
     public partial class FakeWorld : IWorld {
+        private Int32 _SubChunkReads;
+        private Int32 _SubChunkWrites;
+
         /// <summary> </summary>
         public Boolean IsClosed { get; set; }
 
         /// <summary> </summary>
         public ConcurrentDictionary<ChunkLocation, FakeSubChunk> Cache { get; set; }
 
-        public Int32 SubChunkReads;
-        public Int32 SubChunkWrites;
+        public Int32 SubChunkReads { get => _SubChunkReads; set => _SubChunkReads = value; }
+        public Int32 SubChunkWrites { get => _SubChunkWrites; set => _SubChunkWrites = value; }
 
         public FakeWorld(Boolean StoreCache = true) {
             this.IsClosed = false;
@@ -35,13 +38,13 @@ namespace UnitTesting {
         /// <param name="Location"></param>
         /// <returns></returns>
         public SubChunk GetSubChunk(ChunkLocation Location) {
-            System.Threading.Interlocked.Increment(ref this.SubChunkReads);
+            System.Threading.Interlocked.Increment(ref this._SubChunkReads);
 
             FakeSubChunk Out;
 
             if (this.Cache != null) {
                 Out = this.Cache.GetOrAdd(Location, this.Create);
-                            }
+            }
             else {
                 Out = this.Create(Location);
             }
@@ -67,7 +70,7 @@ namespace UnitTesting {
                 };
             }
 
-            System.Threading.Interlocked.Increment(ref this.SubChunkWrites);
+            System.Threading.Interlocked.Increment(ref this._SubChunkWrites);
             System.Threading.Interlocked.Increment(ref Item.Sets);
 
             if (this.Cache != null) {
@@ -77,6 +80,11 @@ namespace UnitTesting {
 
         internal FakeSubChunk Create(ChunkLocation Location) {
             return FakeSubChunk.Create(Location);
+        }
+
+
+        void IWorld.Close() {
+            this.Close();
         }
     }
 }

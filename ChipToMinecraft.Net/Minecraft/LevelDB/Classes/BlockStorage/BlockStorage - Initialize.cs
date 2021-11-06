@@ -22,7 +22,7 @@ namespace Chip.Minecraft.LevelDB {
         /// <param name="persistance">If the data should be presistance</param>
         /// <param name="words">The words</param>
         /// <param name="tags">The palette of blocks</param>
-        public BlockStorage(Byte blockSize, Boolean persistance, UInt32[] words, ITag[] tags) {
+        public BlockStorage(Byte blockSize, Boolean persistance, UInt32[] words, NBTTagCompound[] tags) {
             this.BlockSize = blockSize;
             this.Persistance = persistance;
             this.Words = words;
