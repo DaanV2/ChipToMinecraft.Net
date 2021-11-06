@@ -8,7 +8,9 @@ namespace Chip {
         public static Boolean Process<T>(string SpecFile, T Builder)
             where T : IChipBuilder, IWorld {
 
+            //TODO
 
+            return false;
         }
     }
 }

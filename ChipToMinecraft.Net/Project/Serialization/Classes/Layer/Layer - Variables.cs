@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chip {
-    public partial class ProjectSpecification {
-        //DOLATER add variables to class ProjectSpecification
+namespace Chip.Project.Serialization {
+    public partial class Layer {
+        //DOLATER add variables to class Layer
     }
 }

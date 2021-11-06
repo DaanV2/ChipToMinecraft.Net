@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Text.Json.Serialization;
-using Chip.Minecraft;
 
-namespace Chip {
-    public partial class LayerSpecification {
+namespace Chip.Project.Serialization {
+    public partial class Layer {
         /// <summary>
         /// 
         /// </summary>
@@ -14,12 +13,18 @@ namespace Chip {
         /// 
         /// </summary>
         [JsonPropertyName("block")]
-        public Block Block { get; set; }
+        public Minecraft.Block Block { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonPropertyName("scale")]
         public Single Scale { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("thickness")]
+        public Int32 Thickness { get; set; }
     }
 }

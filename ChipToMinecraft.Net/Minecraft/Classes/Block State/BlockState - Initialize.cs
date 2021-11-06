@@ -14,5 +14,15 @@ namespace Chip.Minecraft {
             this.Type = "int";
             this.Value = 0;
         }
+
+        /// <summary>Creates a new instance of <see cref="BlockState"/></summary>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
+        /// <param name="value"></param>
+        public BlockState(String name, String type, Object value) {
+            this.Name = name;
+            this.Type = type;
+            this.Value = value;
+        }
     }
 }

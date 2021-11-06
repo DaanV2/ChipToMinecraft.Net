@@ -10,6 +10,11 @@ namespace Chip.Minecraft {
             return ToNBT(this);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Process"></param>
+        /// <returns></returns>
         public static NBTTagCompound ToNBT(Block Process) {
             var Builder = new CompoundBuilder("", 3);
             Builder.Add("name", Process.ID);
@@ -18,7 +23,7 @@ namespace Chip.Minecraft {
 
             }
             else {
-                var States = new CompoundBuilder("states", Process.States.Count);
+                CompoundBuilder States = Builder.AddSubCompound("states", Process.States.Count);
 
                 for (Int32 I = 0; I < Process.States.Count; I++) {
                     BlockState State = Process.States[I];
@@ -41,14 +46,50 @@ namespace Chip.Minecraft {
                             throw new NotImplementedException();
                     }
                 }
-
-
-                Builder.Add(States.GetResult());
             }
 
             Builder.Add("version", 0);
 
             return Builder.GetResult();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static Block ToBlock(NBTTagCompound data) {
+            var Out = new Block {
+                ID = data.GetSubValue<String>("name")
+            };
+
+            ITag States = data.GetSubTag("states");
+
+            for (Int32 I = 0; I < States.Count; I++) {
+                ITag State = States.GetSubTag(I);
+
+                String Name = State.Name;
+                NBTTagType Type = State.Type;
+
+                switch (Type) {
+                    case NBTTagType.Byte:
+                        Out.States.Add(new BlockState(Name, "byte", State.GetValue()));
+                        break;
+
+                    case NBTTagType.Int:
+                        Out.States.Add(new BlockState(Name, "int", State.GetValue()));
+                        break;
+
+                    case NBTTagType.String:
+                        Out.States.Add(new BlockState(Name, "string", State.GetValue()));
+                        break;
+
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+
+            return Out;
         }
     }
 }

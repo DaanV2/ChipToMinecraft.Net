@@ -51,7 +51,7 @@ namespace Chip.Minecraft.LevelDB {
                 BlockStorage.ConvertTo(BS, Out);
             }
             else {
-                Out.Pallete = new List<NBTTagCompound>() { Block.AirBlock.ToNBT() };
+                Out.Pallete = new List<NBTTagCompound>() { BlockFactory.Blocks.Air.ToNBT() };
             }
 
             return Out;
