@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "required": ["world"],
+  "required": ["world", "output"],
   "additionalProperties": false,
   "definitions": {
     "location": {
@@ -21,6 +21,30 @@
       "title": "World",
       "description": "The folder path to where the level.dat is located of the minecraft bedrock world",
       "type": "string"
+    },
+    "output": {
+      "title": "Output Folder",
+      "description": "The folder path to where the project needs to output",
+      "type": "string"
+    },
+    "options": {
+      "title": "Options",
+      "description": "",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "concurrency": {
+          "title": "Concurrency",
+          "description": "",
+          "type": "integer",
+          "minimum": 1
+        },
+        "multi-thread": {
+          "title": "Multi Thread",
+          "description": "",
+          "type": "boolean"
+        }
+      }
     },
     "layers": {
       "type": "array",
@@ -96,6 +120,6 @@
         }
       }
     },
-    "$schema": { "type": "string" }
+    "$schema": { "type": "string", "const": "https://raw.githubusercontent.com/DaanV2/ChipToMinecraft.Net/master/schema/project.json" }
   }
 }
