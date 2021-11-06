@@ -13,6 +13,8 @@ namespace Chip.Minecraft.Threading {
 
             Index %= this._Count;
 
+            if (Index > this._Locks.Length) return this._Locks[0];
+
             return this._Locks[Index];
         }
     }

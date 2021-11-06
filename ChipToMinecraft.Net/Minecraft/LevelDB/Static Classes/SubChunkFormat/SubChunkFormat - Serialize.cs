@@ -12,6 +12,15 @@ namespace Chip.Minecraft.LevelDB {
         /// <summary> </summary>
         /// <param name="O"></param>
         /// <param name="Writer"></param>
+        public static void Serialize(SubChunk data, MemoryStream Writer) {
+            var storage = new BlockStorage();
+            BlockStorage.ConvertFrom(data, storage);
+            InternalSerialize(storage, Writer);
+        }
+
+        /// <summary> </summary>
+        /// <param name="O"></param>
+        /// <param name="Writer"></param>
         public static void Serialize(BlockStorage O, MemoryStream Writer) {
             InternalSerialize(O, Writer);
         }

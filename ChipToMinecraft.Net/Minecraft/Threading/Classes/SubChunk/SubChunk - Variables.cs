@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Chip.Minecraft.Threading {
     public partial class SubChunk {
-        [NotNull]
+        
         private AutoResetEvent _Lock;
     }
 }

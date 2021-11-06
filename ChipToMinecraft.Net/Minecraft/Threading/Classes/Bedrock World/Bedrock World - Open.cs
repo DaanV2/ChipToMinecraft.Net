@@ -15,8 +15,8 @@ namespace Chip.Minecraft.Threading {
         /// <param name="Folder"></param>
         /// <param name="Concurrency"></param>
         /// <returns></returns>
-        [return: NotNull]
-        public static BedrockWorld Open([DisallowNull] String Folder, Int32 Concurrency = -1) {
+        
+        public static BedrockWorld Open( String Folder, Int32 Concurrency = -1) {
             return Open(Folder, Chip.Minecraft.BedrockWorld.DefaultOptions);
         }
 
@@ -28,8 +28,8 @@ namespace Chip.Minecraft.Threading {
         /// <param name="O"></param>
         /// <param name="Concurrency"></param>
         /// <returns></returns>
-        [return: NotNull]
-        public static BedrockWorld Open([DisallowNull] String Folder, [DisallowNull] Options O, Int32 Concurrency = -1) {
+        
+        public static BedrockWorld Open( String Folder,  Options O, Int32 Concurrency = -1) {
 #if DEBUG
             System.Diagnostics.Debug.WriteLine($"Opening world: {Folder}");
 #endif

@@ -12,7 +12,7 @@ namespace Chip.Minecraft.LevelDB {
         /// <param name="Y"></param>
         /// <param name="Z"></param>
         /// <returns></returns>
-        public static SubChunk Get<T>(T Container, Int32 X, Int32 Y, Int32 Z)
+        public static SubChunk Get<T>(this T Container, Int32 X, Int32 Y, Int32 Z)
             where T : ILevelDBContainer {
             return Get<T>(Container, new ChunkLocation(X, Y, Z));
         }
@@ -22,7 +22,7 @@ namespace Chip.Minecraft.LevelDB {
         /// <param name="Container"></param>
         /// <param name="Chunk"></param>
         /// <returns></returns>
-        public static SubChunk Get<T>(T Container, ChunkLocation Chunk)
+        public static SubChunk Get<T>(this T Container, ChunkLocation Chunk)
             where T : ILevelDBContainer {
 
             global::LevelDB.DB DB = Container.Db;

@@ -12,8 +12,7 @@ namespace Chip.Minecraft.Threading {
         /// <param name="SC"></param>
         /// <param name="Lock"></param>
         /// <returns></returns>
-        [return: NotNull]
-        public static SubChunk Cast([DisallowNull]Chip.Minecraft.SubChunk SC, [DisallowNull] AutoResetEvent Lock) {
+        public static SubChunk Cast(Chip.Minecraft.SubChunk SC, AutoResetEvent Lock) {
             var Out = (SubChunk)SC;
             Out._Lock = Lock;
 
@@ -35,11 +34,14 @@ namespace Chip.Minecraft.Threading {
         /// <param name="other"></param>
         /// <returns></returns>
         public Boolean Equals(SubChunk other) {
-            return other != null &&
-                   this.Location.Equals(other.Location) &&
+            if (other is null) return false;
+
+            if (this.Location.Equals(other.Location) &&
                    EqualityComparer<UInt32[]>.Default.Equals(this.Words, other.Words) &&
                    EqualityComparer<List<NBTTagCompound>>.Default.Equals(this.Pallete, other.Pallete) &&
-                   EqualityComparer<AutoResetEvent>.Default.Equals(this._Lock, other._Lock);
+                   EqualityComparer<AutoResetEvent>.Default.Equals(this._Lock, other._Lock)) return true;
+
+            return false;
         }
 
         /// <summary>

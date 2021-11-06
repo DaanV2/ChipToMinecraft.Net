@@ -32,7 +32,15 @@ namespace Chip.Minecraft.Threading {
         /// </summary>
         /// <param name="Data"></param>
         public void SetSubChunk(Chip.Minecraft.SubChunk Data) {
+            this._World.SetSubChunk(Data);
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Data"></param>
+        public void SetSubChunk(SubChunk Data) {
+            this._World.SetSubChunk(Data);
         }
     }
 }

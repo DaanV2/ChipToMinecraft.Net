@@ -7,19 +7,19 @@ namespace Chip.Minecraft.Threading {
         /// <summary>
         /// 
         /// </summary>
-        [NotNull]
+        
         private readonly Minecraft.BedrockWorld _World;
 
         /// <summary>
         /// 
         /// </summary>
-        [NotNull]
+        
         private readonly AutoResetEvent[] _Locks;
 
         /// <summary>
         /// 
         /// </summary>
-        [NotNull]
+        
         private readonly Int32 _Count;
     }
 }
