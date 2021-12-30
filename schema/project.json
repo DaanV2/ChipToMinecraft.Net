@@ -43,6 +43,11 @@
           "title": "Multi Thread",
           "description": "",
           "type": "boolean"
+        },
+        "cache-chunks": {
+          "title": "Cache-chunks",
+          "description": "",
+          "type": "boolean"
         }
       }
     },
