@@ -1,38 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Chip.Minecraft;
+using DaanV2.NBT;
 
-namespace Chip.Project.Serialization {
+namespace Chip.Project {
     public partial class Layer {
         /// <summary>
         /// 
         /// </summary>
-        [JsonPropertyName("file")]
         public String Filepath { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonPropertyName("block")]
-        public Minecraft.Block Block { get; set; }
+        public Location StartLocation { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonPropertyName("scale")]
         public Single Scale { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonPropertyName("thickness")]
         public Int32 Thickness { get; set; }
-
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonPropertyName("start")]
-        public List<Int32> StartLocation { get; set; }
+        public NBTTagCompound Block { get; set; }
     }
 }

@@ -24,11 +24,11 @@ namespace Chip.Minecraft {
             this.Words[GetIndex(X, Y, Z)] = Word;
         }
 
-        /// <summary> </summary>
+        /// <summary>(X << 8) | (Z << 4) | Y</summary>
         /// <param name="X"></param>
         /// <param name="Y"></param>
         /// <param name="Z"></param>
-        /// <returns></returns>
+        /// <returns>The index</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32 GetIndex(Int32 X, Int32 Y, Int32 Z) {
             return (X << 8) | (Z << 4) | Y;

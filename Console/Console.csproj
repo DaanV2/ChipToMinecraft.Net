@@ -3,7 +3,14 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>ChipToMinecraft.Net</AssemblyName>
+    <AssemblyName>ChipToMinecraft</AssemblyName>
+    <RootNamespace>Chip</RootNamespace>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChipToMinecraft.Net\ChipToMinecraft.Net.csproj" />
+    <ProjectReference Include="..\leveldb-mcpe.Net\LevelDB-MCPE.Net\LevelDB-MCPE.Net.csproj" />
+  </ItemGroup>
 
 </Project>

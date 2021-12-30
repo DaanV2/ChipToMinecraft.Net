@@ -25,6 +25,14 @@ namespace Chip.Minecraft.Operations {
             return HashCode.Combine(this.X, this.Z);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override String ToString() {
+            return $"{{x:{this.X} Z:{this.Z}}}";
+        }
+
         /// <summary> </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>

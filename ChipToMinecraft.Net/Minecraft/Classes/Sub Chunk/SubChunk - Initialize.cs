@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chip.Minecraft {
     ///DOLATER <summary>add description for class: SubChunk</summary>
@@ -14,5 +9,10 @@ namespace Chip.Minecraft {
             this.Pallete = null;
             this.Words = null;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const Int32 DefaultWordLength = 16 * 16 * 16;
     }
 }

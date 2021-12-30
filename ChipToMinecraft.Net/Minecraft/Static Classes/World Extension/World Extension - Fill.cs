@@ -14,6 +14,9 @@ namespace Chip.Minecraft {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Fill<T>(this T World, Box Area, NBTTagCompound Block)
             where T : IWorld {
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine($"Debug: Filling: {Block} at {Area}");
+#endif
 
             Box? nArea = Operations.FillEntireSubChunk.FillCheck<T>(World, Area, Block);
 
@@ -49,9 +52,9 @@ namespace Chip.Minecraft {
         internal static void InternalFill<T>(T World, ChunkLocation From, ChunkLocation To, Box Area, NBTTagCompound block)
             where T : IWorld {
 
-            if (From.X > To.X) {return;}
-            if (From.Y > To.Y) {return;}
-            if (From.Z > To.Z) {return;}
+            if (From.X > To.X) { return; }
+            if (From.Y > To.Y) { return; }
+            if (From.Z > To.Z) { return; }
 
             var Op = new Operations.FillSubChunk(block);
             var NewBox = new Box((Location)From, (Location)To);

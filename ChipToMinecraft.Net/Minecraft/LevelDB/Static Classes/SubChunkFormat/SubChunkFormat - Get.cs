@@ -38,6 +38,13 @@ namespace Chip.Minecraft.LevelDB {
 
             Byte[] SubChunkKey = KeyUtillities.CreateSubChunkKey(Chunk);
             Byte[] Data = DB.Get(SubChunkKey);
+
+            if (Data is null) {
+                Out.Pallete = new List<NBTTagCompound>() { BlockFactory.Blocks.Air.NBT };
+                Out.Words = new UInt32[SubChunk.DefaultWordLength];
+                return Out;
+            }
+
             var stream = new MemoryStream(Data);
             Version = (Byte)stream.ReadByte();
             Int32 LayerCount = stream.ReadByte();
@@ -51,7 +58,7 @@ namespace Chip.Minecraft.LevelDB {
                 BlockStorage.ConvertTo(BS, Out);
             }
             else {
-                Out.Pallete = new List<NBTTagCompound>() { BlockFactory.Blocks.Air.ToNBT() };
+                Out.Pallete = new List<NBTTagCompound>() { BlockFactory.Blocks.Air.NBT };
             }
 
             return Out;

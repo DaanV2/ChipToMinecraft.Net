@@ -6,11 +6,8 @@ namespace Chip.Minecraft {
         /// <summary> </summary>
         /// <returns></returns>
         public void Close() {
-#if DEBUG
-            System.Diagnostics.Debug.WriteLine($"Closing world: {this.Folder}");
-#endif
-
             if (this.Db != null) {
+                Console.WriteLine($"World: Closing '{this.Folder}'");
                 this.Db.Close();
                 this.Db = null;
             }

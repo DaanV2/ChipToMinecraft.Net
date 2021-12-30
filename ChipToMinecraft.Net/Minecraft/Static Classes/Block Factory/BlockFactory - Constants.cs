@@ -5,7 +5,7 @@
             /// <summary>
             /// 
             /// </summary>
-            public readonly static Block Air = new("minecraft:air");
+            public readonly static BlockCache Air = new("minecraft:air");
         }
     }
 }

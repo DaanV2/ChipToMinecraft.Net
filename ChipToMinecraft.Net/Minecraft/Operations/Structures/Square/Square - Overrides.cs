@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chip.Minecraft.Operations {
     public readonly partial struct Square : IEquatable<Square> {
@@ -44,6 +40,14 @@ namespace Chip.Minecraft.Operations {
         /// <returns></returns>
         public static Boolean operator !=(Square left, Square right) {
             return !(left == right);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override String ToString() {
+            return $"from:{this.From} to:{this.To}";
         }
     }
 }

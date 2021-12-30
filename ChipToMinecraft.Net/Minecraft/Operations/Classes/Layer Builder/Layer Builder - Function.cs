@@ -1,8 +1,7 @@
 ﻿using DaanV2.NBT;
 
 namespace Chip.Minecraft.Operations {
-    public partial class LayerBuilder<T>
-        where T : IWorld {
+    public partial class LayerBuilder {
 
         /// <summary> </summary>
         /// <param name="Area"></param>
@@ -17,6 +16,8 @@ namespace Chip.Minecraft.Operations {
         /// <param name="Area"></param>
         /// <returns></returns>
         public Box Combine(Square Area) {
+            Area *= this.Scale;
+
             return new Box(
                 new Location(this.Offset.X + Area.From.X, this.Layer.Start, this.Offset.Z + Area.From.Z),
                 new Location(this.Offset.X + Area.To.X, this.Layer.End, this.Offset.Z + Area.To.Z));

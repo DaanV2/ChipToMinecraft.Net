@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Chip.Project.Serialization;
 
@@ -21,5 +22,11 @@ namespace Chip.Project {
         /// </summary>
         [JsonPropertyName("options")]
         public ProjectOptions Options { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("layers")]
+        public List<Layer> Layers { get; set; }
     }
 }

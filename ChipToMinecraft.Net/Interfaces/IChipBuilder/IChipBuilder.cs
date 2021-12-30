@@ -6,13 +6,13 @@ namespace Chip {
         /// <summary>
         /// 
         /// </summary>
-        public BuilderOptions Options { get; }
+        public Chip.Project.Project Project { get; }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="SpecificationFile"></param>
         /// <returns></returns>
-        public Boolean Process(System.String SpecificationFile);
+        public Boolean Process();
     }
 }

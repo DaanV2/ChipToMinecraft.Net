@@ -23,16 +23,19 @@ namespace Chip.Minecraft.Operations {
             Index = (UInt32)Count;
             ToFill.Pallete.Add(this.Block);
 
-#if DEBUG
-            System.Diagnostics.Debug.WriteLine($"[Chunk: {ToFill.Location}]: Filling Partial: {this.Block.GetSubValue<String>("name")} T{Thread.CurrentThread.ManagedThreadId}");
-#endif
-
         skipset:
+            UInt32[] Words = ToFill.Words;
 
             for (Int32 X = this.StartX; X < this.EndX; X++) {
-                for (Int32 Y = this.StartY; Y < this.EndY; Y++) {
-                    for (Int32 Z = this.StartZ; Z < this.EndZ; Z++) {
-                        ToFill.SetWord(X, Y, Z, Index);
+                Int32 xMask = SubChunk.GetIndex(X, 0, 0);
+
+                for (Int32 Z = this.StartZ; Z < this.EndZ; Z++) {
+                    Int32 zMask = SubChunk.GetIndex(0, 0, Z) | xMask;
+
+                    for (Int32 Y = this.StartY; Y < this.EndY; Y++) {
+                        Int32 c = zMask | Y;
+
+                        Words[c] = Index;
                     }
                 }
             }
