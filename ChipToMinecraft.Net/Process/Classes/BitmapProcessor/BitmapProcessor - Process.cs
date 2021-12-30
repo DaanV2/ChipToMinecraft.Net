@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Chip.Minecraft;
 using Chip.Minecraft.Operations;
 using Chip.Project;
 using DaanV2.NBT;
@@ -13,10 +14,10 @@ namespace Chip.Process {
         /// 
         /// </summary>
         /// <param name="layer"></param>
-        public void Process(Layer layer) {
+        public Box Process(Layer layer) {
             Console.WriteLine($"Bitmap: placing:{layer.Block} over {layer.Filepath}");
             Console.WriteLine($"\tscale:{layer.Scale} start:{layer.StartLocation} Thickness:{layer.Thickness}");
-            this._Action(layer);
+            return this._Action(layer);
         }
 
         /// <summary>
@@ -24,13 +25,15 @@ namespace Chip.Process {
         /// </summary>
         /// <param name="layer"></param>
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-        private void ProcessDefault(Layer layer) {
+        private Box ProcessDefault(Layer layer) {
             var Map = (Bitmap)Bitmap.FromFile(layer.Filepath);
             var Builder = new LayerBuilder(this.Context.World, layer.Thickness, layer.Scale, layer.StartLocation);
             NBTTagCompound Block = layer.Block;
 
             for (Int32 X = 0; X < Map.Width; X++)
                 ProcessY(X, Map, Builder, Block);
+
+            return GetBoxUsed(layer.StartLocation, Map.Width, layer.Thickness, Map.Height, layer.Scale);
         }
 
         /// <summary>
@@ -38,7 +41,7 @@ namespace Chip.Process {
         /// </summary>
         /// <param name="layer"></param>
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-        private void ProcessMulti(Layer layer) {
+        private Box ProcessMulti(Layer layer) {
             var Map = (Bitmap)Bitmap.FromFile(layer.Filepath);
             var Builder = new LayerBuilder(this.Context.World, layer.Thickness, layer.Scale, layer.StartLocation);
             NBTTagCompound Block = layer.Block;
@@ -49,6 +52,8 @@ namespace Chip.Process {
                 for (Int32 X = range.Item1; X < range.Item2; X++)
                     ProcessY(X, Map, Builder, Block);
             });
+
+            return GetBoxUsed(layer.StartLocation, Map.Width, layer.Thickness, Map.Height, layer.Scale);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,6 +68,11 @@ namespace Chip.Process {
 
                 Y = map.FindYStart(X, yEnd);
             }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Box GetBoxUsed(Location Start, Int32 Width, Int32 Thickness, Int32 Height, Single Scale) {
+            return new Box(Start, Start.Offset(Width, Thickness, Height)) * Scale;
         }
     }
 }

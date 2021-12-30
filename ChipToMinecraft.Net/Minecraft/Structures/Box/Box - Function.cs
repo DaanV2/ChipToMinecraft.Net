@@ -10,7 +10,6 @@ namespace Chip.Minecraft {
             Int32 xFrom, yFrom, zFrom;
             Int32 xTo, yTo, zTo;
 
-
             //X
             if (A.X < B.X) {
                 xFrom = A.X;
@@ -42,6 +41,17 @@ namespace Chip.Minecraft {
             }
 
             return new Box(xFrom, yFrom, zFrom, xTo, yTo, zTo);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public Box Combine(Box other) {
+            return new Box(
+                Location.Min(this.From, other.From),
+                Location.Max(this.To, other.To));
         }
     }
 }

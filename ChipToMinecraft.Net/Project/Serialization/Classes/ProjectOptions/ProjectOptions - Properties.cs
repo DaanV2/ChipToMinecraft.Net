@@ -25,5 +25,11 @@ namespace Chip.Project.Serialization {
         /// </summary>
         [JsonPropertyName("multi-thread")]
         public Boolean MultiThread { get => this._MultiThread; set => this._MultiThread = value; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("cache-chunks")]
+        public Boolean CacheChunks { get => cacheChunks; set => cacheChunks = value; }
     }
 }

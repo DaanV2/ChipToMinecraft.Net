@@ -13,10 +13,24 @@ namespace Chip.Project {
 
             Files.Copy(project.World, project.Output);
 
-            IWorld World = WorldFactory.Open(project.Output, project.Options.MultiThread, project.Options.Concurrency);
+            IWorld World = WorldFactory.Open(project.Output, project.Options);
             var context = new Process.Context(World, project);
             var processor = new Process.Processor(context);
-            processor.Process();
+
+            //Processing
+            Box? Out = processor.Process();
+
+            //Fill possibly any empty
+            if (Out.HasValue) {
+                Box area = Out.Value;
+                Console.WriteLine("Ensuring world");
+
+                if (area.From.Y != 0) {
+                    area = new Box(area.From.X, 0, area.From.Z, area.To.X, area.From.Y - 1, area.From.Z);
+
+                    World.ForEach((sc) => ChunkUpdate.Updated, area);
+                }
+            }
 
             World.Close();
         }

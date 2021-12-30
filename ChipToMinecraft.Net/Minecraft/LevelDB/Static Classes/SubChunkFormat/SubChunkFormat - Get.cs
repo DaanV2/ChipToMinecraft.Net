@@ -40,8 +40,7 @@ namespace Chip.Minecraft.LevelDB {
             Byte[] Data = DB.Get(SubChunkKey);
 
             if (Data is null) {
-                Out.Pallete = new List<NBTTagCompound>() { BlockFactory.Blocks.Air.NBT };
-                Out.Words = new UInt32[SubChunk.DefaultWordLength];
+                Out = SubChunk.Create(Chunk, BlockFactory.Blocks.Air);
                 return Out;
             }
 
