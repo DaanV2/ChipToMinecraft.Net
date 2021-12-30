@@ -5,10 +5,6 @@ using Chip.Project;
 namespace Chip {
     internal class Program {
         private static void Main(String[] args) {
-            args = new String[] {
-                @"F:\Projects\Minecraft\I4004-CPU\project.json"
-            };
-
             var Options = new ProgramOptions();
             Options.Read(args);
 
