@@ -114,7 +114,7 @@
                       "enum": ["int", "byte", "string"]
                     },
                     "value": {
-                      "type": "integer",
+                      "type": ["integer", "string"],
                       "title": "Value"
                     }
                   }
