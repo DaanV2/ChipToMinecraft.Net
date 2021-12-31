@@ -1,7 +1,13 @@
 # Chip To Minecraft.Net
 
 - [Chip To Minecraft.Net](#chip-to-minecraftnet)
-	- [API Usage](#api-usage)
+  - [Block pallete](#block-pallete)
+  - [API Usage](#api-usage)
+  - [Manually manipulation](#manually-manipulation)
+
+## Block pallete
+
+[read here](./documentation/block_pallete.md)
 
 ## API Usage
 
