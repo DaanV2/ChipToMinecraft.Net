@@ -21,18 +21,23 @@ namespace Chip.Project {
             Box? Out = processor.Process();
 
             //Fill possibly any empty
-            if (Out.HasValue) {
-                Box area = Out.Value;
-                Console.WriteLine("Ensuring world");
-
-                if (area.From.Y != 0) {
-                    area = new Box(area.From.X, 0, area.From.Z, area.To.X, area.From.Y - 1, area.From.Z);
-
-                    World.ForEach((sc) => ChunkUpdate.Updated, area);
-                }
-            }
+            if (Out.HasValue) EnsureFilledWorld(World, Out.Value);
 
             World.Close();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="World"></param>
+        /// <param name="AreaUsed"></param>
+        public static void EnsureFilledWorld(IWorld World, Box AreaUsed) {
+            Console.WriteLine("Ensuring world is correctly filled");
+
+            if (AreaUsed.From.Y == 0) return;
+            AreaUsed = new Box(AreaUsed.From.X, 0, AreaUsed.From.Z, AreaUsed.To.X, AreaUsed.From.Y - 1, AreaUsed.From.Z);
+
+            World.ForEach((sc) => ChunkUpdate.Updated, AreaUsed);
         }
     }
 }
